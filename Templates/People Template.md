@@ -6,7 +6,7 @@
 	let location = await tp.system.prompt("Location")
 -%>
 ---
-company: Red Hat
+company: Company Name
 location: <%location%>
 title: <%title%>
 email: 
