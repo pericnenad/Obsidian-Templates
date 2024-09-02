@@ -6,7 +6,7 @@
 	let location = await tp.system.prompt("Location")
 -%>
 ---
-company: MyCompany
+company: Red Hat
 location: <%location%>
 title: <%title%>
 email: 
@@ -23,9 +23,15 @@ tags:: [[👥 People MOC]]
 ## Notes and Links
 - 
 
-## Meetings in the past month
+## 1x1 Meetings in the past month
 ```dataview
 TABLE file.cday as Created, summary AS "Summary"
-FROM "Meetings" where contains(file.outlinks, this.file.link) AND file.mtime >= date(today) - dur(1 month)
+FROM "Meetings" where contains(file.outlinks, this.file.link) AND file.mtime >= date(today) - dur(1 month) AND type = "1x1"
+SORT file.cday DESC
+```
+## Other Meetings in the past month
+```dataview
+TABLE file.cday as Created, summary AS "Summary"
+FROM "Meetings" where contains(file.outlinks, this.file.link) AND file.mtime >= date(today) - dur(1 month) AND type != "1x1"
 SORT file.cday DESC
 ```
