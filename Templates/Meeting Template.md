@@ -7,7 +7,7 @@
 ---
 date: <% tp.file.creation_date() %>
 type: <% meeting_type %>
-company: Red Hat
+company: Your Company
 summary: <% meeting_type %> <% meeting_name %> <% tp.date.now("DD-MMM-YYYY") %>
 tags: meeting
 ---
