@@ -8,7 +8,7 @@ const newFilePath = `${newFolderPath}/${newFileName}`;
 const existing = tp.file.find_tfile(newFilePath);
 
 // Find the template file
-const templatePath = "Templates/Daily Note";
+const templatePath = "Templates/Personal Note";
 const templateFile = tp.file.find_tfile(templatePath);
 
 // Read the template content and create a new file
