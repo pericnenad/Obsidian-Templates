@@ -1,7 +1,7 @@
 <%*
 // Define the path for the new file
 const newFolderPath = "Personal Daily"; 
-const newFileName = tp.date.now("dddd, DD-MMM-YYYY");
+const newFileName =  `Personal, ${tp.date.now("dddd, DD-MMM-YYYY")}`;
 
 // Combine to form the full file path
 const newFilePath = `${newFolderPath}/${newFileName}`;
