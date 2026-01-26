@@ -4,11 +4,13 @@
 	let title = await tp.system.prompt("Title")
 	let team = await tp.system.prompt("Team")
 	let location = await tp.system.prompt("Location")
+	let manager = await tp.system.prompt("Manager (if known)")
 -%>
 ---
-company: Company Name
+company: your_company
 location: <%location%>
 title: <%title%>
+manager: <%manager%>
 email: 
 aliases: 
  - <%alias%>

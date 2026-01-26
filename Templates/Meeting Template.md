@@ -3,25 +3,32 @@
 	let meeting_type = await tp.system.prompt("Type (scrum, 1x1, etc..)[1x1]") || "1x1"
 	const fileName = meeting_name + " " + tp.date.now("DD-MMM-YYYY")
 	const existing = tp.file.find_tfile(fileName);
+	const created_on = tp.date.now("dddd, DD-MMM-YYYY");
 -%>
 ---
 date: <% tp.file.creation_date() %>
+year: <% tp.date.now("YYYY") %>
+quarter: <% tp.date.now("[Q]Q") %>
 type: <% meeting_type %>
-company: Your Company
+company: your_company
+tags: 
+  - meeting
+  - <% meeting_type %>
+createdOn: <% created_on %>
 summary: <% meeting_type %> <% meeting_name %> <% tp.date.now("DD-MMM-YYYY") %>
-tags: meeting
+
 ---
 
 Date: [[<% tp.date.now("DD-MMM-YYYY, dddd") %>]]
-<% await tp.file.move("Meetings/" + meeting_type +" "+ meeting_name + "-" + tp.date.now("DD-MMM-YYYY")) %>
+<% await tp.file.move("Meetings/" + meeting_type +" "+ meeting_name + " " + tp.date.now("DD-MMM-YYYY")) %>
 # [[<% meeting_type +" "+ meeting_name + " " + tp.date.now("DD-MMM-YYYY") %>]]
 
 **Attendees**: [[ ]] 
 
-## Agenda/Questions
+## Notes 
 - 
 
-## Notes 
+## Agenda/Questions
 - 
 
 ## Next Steps / Action Items
